@@ -1,0 +1,99 @@
+body {
+    background: #F9F6EE;
+    font-family: "Nunito", sans-serif;
+}
+
+.content {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.img-sf-0 {
+    padding-top: 5vh;
+}
+
+.artwork-view {
+    background: #F9F6EE;
+    max-width: 95vw;
+}
+#painting-div{
+    /* padding: 300px 100px; */
+    max-width: 50vw;
+    max-height: 95vh;
+}
+
+#painting{
+    max-height: 600px;
+}
+#mainNavbar {
+    font-size: 1.5rem;
+    font-weight: 100;
+    background-color: #faf3e0;
+}
+
+#mainNavbar .nav-link {
+    color: black;
+}
+
+#mainNavbar .nav-link:hover {
+    color: #EA1C2C;
+}
+
+#mainNavbar .navbar-brand {
+    color: #EA1C2C;
+    font-size: 1.5rem;
+}
+
+#headingGroup {
+    color: #EA1C2C;
+}
+
+#headingGroup h1 {
+    font-weight: 100;
+    font-size: 4rem;
+}
+
+#artworks {
+    padding: 50px;
+}
+
+#carousel {
+    max-width: 95vw;
+}
+
+.carousel-indicators button[data-bs-target] {
+    max-height: 10vh;
+    max-width: 10vw;
+    min-height: 1vh;
+    min-width: 2vw;
+    background: none;
+}
+
+.carousel-indicators button[data-bs-target]:not(.active) {
+    opacity: 0.2;
+}
+
+.lang {
+    background-color: #F9F6EE;
+}
+
+@media (max-width: 1200px) {
+    #headingGroup h1 {
+        font-weight: 100;
+        font-size: 3rem;
+        padding-top: 20vh;
+        padding-bottom: 10vh;
+    }
+
+    #carousel {
+        max-width: 100vw;
+    }
+
+    #artworks {
+        padding: 5px;
+    }
+
+    .img-sf-0 {
+        padding-top: 0;
+    }
+}

@@ -1,0 +1,31 @@
+{% extends 'index.html'%}
+
+{# thumbnails #}
+{%block thumbnails %}
+    {% for name in files%}
+        {% if(loop.index0 == 0) %}
+        <button type="button" data-bs-target="#carousel-painting" data-bs-slide-to="{{loop.index0}}" class="active" id="thumb"
+            aria-current="true" aria-label="Slide {{loop.index0}}">
+        {% else %}
+        <button type="button" data-bs-target="#carousel-painting" data-bs-slide-to="{{loop.index0}}" class="" id="thumb"
+            aria-current="true" aria-label="Slide {{loop.index0}}">
+        {% endif %}
+            <img src="{{url_for('static',filename = '/assets/artworks/'+name)}}" class="d-block w-100" alt=""
+                id="thumb-art">
+        </button>
+    {%endfor%}
+{%endblock%}
+
+{# Carousel Items #}
+{%block carousel_items %}
+    {% for name in files%}
+        {% if(loop.index0 == 0) %}
+        <div class="carousel-item active">
+        {%else%}
+        <div class="carousel-item">
+        {%endif%}
+            <img src="{{url_for('static',filename = '/assets/artworks/'+name)}}" class="d-block w-100 mx-auto my-auto"
+                alt="Slide {{loop.index}}">
+        </div>
+    {%endfor%}
+{%endblock%}
