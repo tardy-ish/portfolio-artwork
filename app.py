@@ -1,13 +1,15 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 import os
+import json
 
 app = Flask(__name__)
 
 
 @app.route('/')
-@app.route('/en')
-def index():
-    art = list(os.listdir('./static/assets/artworks'))
+@app.route('/<lang>',methods=["POST","GET"])
+def index(lang='en'):
+    art = list(os.listdir('static/assets/artworks'))
+    translations = json.load(open('static/translations.json',encoding='utf-8'))
     paintingNames = []
     paintingSizes = []
     for f in art:
@@ -20,6 +22,8 @@ def index():
         files=art,
         sizes=paintingSizes,
         names=paintingNames,
+        lang=lang,
+        langP=translations[lang],
     )
 
 
