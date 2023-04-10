@@ -2,13 +2,13 @@
 
 {# thumbnails #}
 {%block thumbnails %}
-    {% for name in files%}
+    {% for painting in paintings%}
         {% if(loop.index0 == 0) %}
         <button type="button" data-bs-target="#carousel-painting" data-bs-slide-to="{{loop.index0}}" class="active"
-        style="background-image: url({{url_for('static',filename = 'assets/artworks/'+name)}});">
+        style="background-image: url({{url_for('static',filename = 'assets/artworks_compressed/'+painting['file'])}});">
         {% else %}
         <button type="button" data-bs-target="#carousel-painting" data-bs-slide-to="{{loop.index0}}" class=""
-        style="background-image: url({{url_for('static',filename = 'assets/artworks/'+name)}});">
+        style="background-image: url({{url_for('static',filename = 'assets/artworks_compressed/'+painting['file'])}});">
         {% endif %}
         </button>
     {%endfor%}
@@ -16,7 +16,7 @@
 
 {# Carousel Items #}
 {%block carousel_items %}
-    {% for file in files%}
+    {% for painting in paintings%}
         {% if(loop.index0 == 0) %}
         <div class="carousel-item active">
         {%else%}
@@ -25,13 +25,11 @@
             <div class="artwork-view container-flex mx-auto">
                 <div class="row align-items-center">
                     <div class="col-md-6 col-12 d-flex justify-content-center" id="">
-                        {# <a href="{{url_for('static',filename = '/assets/artworks/'+file)}}" target="_blank" rel="noopener noreferrer"> #}
-                            <img class="img-fluid" src="{{url_for('static',filename = '/assets/artworks/'+file)}}" alt="" id="painting" data-bs-target="#imageModal" data-bs-toggle="modal">
-                        {# </a> #}
+                        <img class="painting img-fluid" src="{{url_for('static',filename = 'assets/artworks_compressed/'+painting['file'])}}" alt="">
                     </div>
                     <div class="col-md-6 col-12 mx-auto" id="details-div">
-                        <h2 class="d-flex align-items-center justify-content-center" id="details">{{names[loop.index0]}}</h2>
-                        <p class="d-flex align-items-center justify-content-center" id="details">{{sizes[loop.index0]}}</p>
+                        <h2 class="d-flex align-items-center justify-content-center" id="details">{{painting['name']}}</h2>
+                        <p class="d-flex align-items-center justify-content-center" id="details">{{painting['size']}}</p>
                     </div>
                 </div>
             </div>

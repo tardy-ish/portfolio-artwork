@@ -11,7 +11,7 @@ section{
     margin-bottom: 100px;
 }
 
-#about:lang(ae){
+#about:lang(ar){
     text-align: right;
 }
 
@@ -21,9 +21,15 @@ section{
 }
 
 
-#painting{
+.painting {
     max-height: 600px;
     margin: 50px 0;
+    cursor: pointer;
+}
+
+#gallery-modal .modal-img{
+    max-height: fit-content;
+    width: auto;
 }
 
 #contactForm{
@@ -36,7 +42,7 @@ section{
     background: #fff3f1;
 }
 
-.navbar:lang(ae){
+.navbar:lang(ar){
     font-size: 1.5rem;
     font-weight: 300;
     background: #fff3f1;
@@ -68,7 +74,7 @@ section{
     font-size: 4rem;
 }
 
-#headingGroup h1:lang(ae){
+#headingGroup h1:lang(ar){
     font-weight: 300;
     font-size: 4rem;
 }
